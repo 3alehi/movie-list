@@ -9,9 +9,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        bg:"#141414",
+        "black-velvet" : "#0F0F0F",
+        "text-gray" : "#BFBFBF",
+        "bg-black" : "#1A1A1A",
+        "gray-9" : "#999999",
+        "red-btn" : "#E50000"
+      
       },
+      fontFamily: {
+        manrope: ['Manrope', 'sans-serif'],
+      },
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1300px'
+      },
+      
     },
   },
   plugins: [],
