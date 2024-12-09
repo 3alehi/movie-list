@@ -236,38 +236,64 @@ const HomePage: React.FC = () => {
 
         </div>
         <div className="mt-36 max-md:mt-12">
-          <div className="flex justify-between items-center max-md:flex-col ">
-            <div className="max-lg:w-[70%] max-md:w-full">
-              <h1 className="text-4xl max-lg:text-2xl max-md:text-xl	">Frequently Asked Questions</h1>
-              <p className="text-gray-9 mt-4 max-lg:text-base ">Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe.</p>
-            </div>
-            <div className="flex max-md:justify-start w-full max-md:mt-5">
-            <button className="bg-red-btn px-6 py-4 rounded-lg max-lg:text-base ">Ask a Question</button>
+  <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-5">
+    <div className="lg:w-3/5 max-md:w-full">
+      <h1 className="text-4xl max-lg:text-2xl max-md:text-xl font-semibold">
+        Frequently Asked Questions
+      </h1>
+      <p className="text-gray-9 mt-4 max-lg:text-base">
+        Got questions? We've got answers! Check out our FAQ section to find
+        answers to the most common questions about StreamVibe.
+      </p>
+    </div>
+    <div className="flex justify-start lg:justify-end lg:w-2/5 max-md:w-full">
+      <button className="bg-red-btn px-6 py-4 rounded-lg text-white font-medium max-lg:text-base">
+        Ask a Question
+      </button>
+    </div>
+  </div>
+  <Questions />
+</div>
 
-            </div>
-          </div>
-          <Questions />
-        </div>
-        <div className="mt-36 max-md:mt-12">
-          <div className="flex justify-between items-center max-md:flex-col">
-            <div className="max-lg:w-[65%] max-md:w-full">
-              <h1 className="text-4xl	max-lg:text-2xl max-md:text-xl ">Choose the plan that's right for you</h1>
-              <p className="text-gray-9 mt-4">Join StreamVibe and select from our flexible subscription options tailored to suit your viewing preferences. Get ready for non-stop entertainment!</p>
-            </div>
-            <div className="bg-black border rounded-lg border-black-velvet p-3 max-md:w-full max-md:flex max-md:justify-start max-md:mt-5">
-              <button onClick={() => setMonth(1)} className={`py-3 px-4 ${month === 1 && "bg-black-velvet rounded-lg"} `}>
-                Monthly
-              </button>
-              <button onClick={() => setMonth(2)} className={`py-3 px-4 ${month === 2 && "bg-black-velvet rounded-lg"} `}>
-                Yearly
-              </button>
-            </div>
-          </div>
-          <div className="">
-            <PlanBox id={month}/>
-          </div>
+<div className="mt-36 max-md:mt-12">
+  <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-5">
+    <div className="lg:w-2/3 max-md:w-full">
+      <h1 className="text-4xl max-lg:text-2xl max-md:text-xl font-semibold">
+        Choose the plan that's right for you
+      </h1>
+      <p className="text-gray-9 mt-4 max-lg:text-base">
+        Join StreamVibe and select from our flexible subscription options
+        tailored to suit your viewing preferences. Get ready for non-stop
+        entertainment!
+      </p>
+    </div>
 
-        </div>
+    <div className="bg-black border rounded-lg border-black-velvet p-3 flex lg:w-1/3 max-md:w-full max-md:justify-start max-md:mt-5">
+      <button
+        onClick={() => setMonth(1)}
+        className={`py-3 px-4 w-full lg:w-auto text-center font-medium ${
+          month === 1 ? "bg-black-velvet text-white rounded-lg" : "text-gray-500"
+        }`}
+      >
+        Monthly
+      </button>
+      <button
+        onClick={() => setMonth(2)}
+        className={`py-3 px-4 w-full lg:w-auto text-center font-medium ${
+          month === 2 ? "bg-black-velvet text-white rounded-lg" : "text-gray-500"
+        }`}
+      >
+        Yearly
+      </button>
+    </div>
+  </div>
+
+  {/* جعبه پلن */}
+  <div className="mt-8">
+    <PlanBox id={month} />
+  </div>
+</div>
+
         <div className="mt-36 max-md:mt-12">
         <div className=" relative w-full">
   <div className="relative flex flex-col gap-2 z-10">
