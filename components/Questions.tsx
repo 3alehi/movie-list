@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import faqe from '@/public/data/faqs.json';
 
@@ -15,6 +16,23 @@ const Questions: React.FC = () => {
   };
 
   return (
+    <div>
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-5  mt-28 max-md:mt-12 ">
+    <div className="lg:w-3/5 max-md:w-full">
+      <h1 className="text-4xl max-lg:text-2xl max-md:text-xl font-semibold">
+        Frequently Asked Questions
+      </h1>
+      <p className="text-gray-9 mt-4 max-lg:text-base">
+        Got questions? We've got answers! Check out our FAQ section to find
+        answers to the most common questions about StreamVibe.
+      </p>
+    </div>
+    <div className="flex justify-start lg:justify-end lg:w-2/5 max-md:w-full">
+      <button className="bg-red-btn px-6 py-4 rounded-lg text-white font-medium max-lg:text-base">
+        Ask a Question
+      </button>
+    </div>
+  </div>
     <div className="grid grid-cols-2 mt-28 max-md:mt-12 gap-2 my-5 max-lg:grid-cols-1">
       {faqe.FAQs.map((data) => (
         <div key={data.id}>
@@ -63,6 +81,7 @@ const Questions: React.FC = () => {
 <hr className="bg-red-btn h-[0.5px] rounded-lg my-4 border-none" />
 </div>
       ))}
+    </div>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import Footer from '@/components/Footer';
+import StartFree from '@/components/StartFree';
 
 export default function RootLayout({
   children,
@@ -21,7 +22,11 @@ export default function RootLayout({
         <QueryClientProvider  client={queryClient}>
           <Navbar />
           {children}
-          <Footer/>
+<div className='container mx-auto'>
+          <StartFree/>
+
+</div>
+<Footer/>
         </QueryClientProvider>
       </body>
     </html>
