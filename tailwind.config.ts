@@ -14,7 +14,9 @@ export default {
         "text-gray" : "#BFBFBF",
         "bg-black" : "#1A1A1A",
         "gray-9" : "#999999",
-        "red-btn" : "#E50000"
+        "red-btn" : "#E50000",
+        "bg-navbar" : "#333333",
+        "hr":"#262626"
       
       },
       fontFamily: {
