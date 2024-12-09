@@ -1,11 +1,11 @@
 import React from 'react';
 
 const page: React.FC = () => {
-  return (
-<div>
-  
-</div>
-  );
+    return (
+        <div>
+            page
+        </div>
+    );
 };
 
 export default page;
