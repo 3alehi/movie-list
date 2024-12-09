@@ -27,9 +27,9 @@ const Experience: React.FC = () => {
     </svg>
     
             </div>
-            <p className='mx-3 text-2xl	'>Smartphones</p>
+            <p className='mx-3 text-2xl max-lg:text-xl		'>Smartphones</p>
 </div>
-<p className='mt-8  text-lg	 text-gray-9'>StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store</p>
+<p className='mt-8  text-lg	 text-gray-9 max-lg:text-base'>StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store</p>
        
   </div>
       

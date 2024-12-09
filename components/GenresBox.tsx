@@ -17,13 +17,13 @@ const GenresBox: React.FC<GenresBoxProps> = ({ name, isLoding, id }) => {
   });
 
   return (
-    <div className="bg-bg-black py-8 px-8 rounded-lg mt-20">
+    <div className="bg-bg-black py-8 px-8 rounded-lg mt-20 max-md:mt-2">
       <div className="grid grid-cols-2 gap-2">
         {isLoading ? (
           Array.from({ length: 4 }).map((_, index) => (
             <div
               key={index}
-              className="w-[90px] h-[90px] bg-gray-700 rounded-md animate-pulse"
+              className="w-[90px] h-[90px] ئشطمل bg-gray-700 rounded-md animate-pulse"
             ></div>
           ))
         ) : (

@@ -15,7 +15,7 @@ const Questions: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 mt-28 gap-2 my-5">
+    <div className="grid grid-cols-2 mt-28 max-md:mt-12 gap-2 my-5 max-lg:grid-cols-1">
       {faqe.FAQs.map((data) => (
         <div key={data.id}>
           <div className="flex justify-between items-center">
@@ -56,7 +56,7 @@ const Questions: React.FC = () => {
             )}
           </div>
           {openId === data.id && (
-            <div className="mt-2 mx-5 text-gray-9 px-20">
+            <div className="mt-2 mx-5 text-gray-9 px-20 max-md:px-0">
               <p>{data.answer}</p>
             </div>
           )}
