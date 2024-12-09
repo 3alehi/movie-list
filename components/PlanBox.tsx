@@ -6,8 +6,8 @@ interface PlanBoxProps{
 const PlanBox: React.FC<PlanBoxProps> = ({id}) => {
     return (
         <div className='grid grid-cols-3 gap-7 mt-20 '>
-            {Plans.plans.map(data =>(
-                <div className='bg-black-velvet px-12 py-12 rounded-lg '>
+            {Plans.plans.map(data  =>(
+                <div key={data.id} className='bg-black-velvet px-12 py-12 rounded-lg '>
                     <h1 className='text-2xl font-bold'>{data.name}</h1>
                     <p className='text-gray-9 mt-4'>{data.description}</p>
                     <p className='mt-12'>

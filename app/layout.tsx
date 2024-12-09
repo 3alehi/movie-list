@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-black text-white font-Manrope">
         {/* تنظیم QueryClientProvider */}
-        <QueryClientProvider client={queryClient}>
+        <QueryClientProvider  client={queryClient}>
           <Navbar />
           {children}
           <Footer/>
