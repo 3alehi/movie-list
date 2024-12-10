@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import "swiper/css";
 
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
     const { data, isLoading } = useQuery({
         queryKey: ["genres"],
         queryFn: fetchGenres,
@@ -107,4 +107,4 @@ const page: React.FC = () => {
     );
 };
 
-export default page;
+export default Page;

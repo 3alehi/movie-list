@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      () => {
+      ([]) => {
 
       },
       { threshold: 0.1 } 
@@ -37,10 +37,7 @@ const HomePage: React.FC = () => {
     };
   }, []);
 
-  const handleSlideChange = (swiper: any) => {
-    const progress = Math.round(swiper.progress * 100);
-    setProgressPercent(progress);
-  };
+ 
 
   return (
     <div className="bg-black text-white max-lg:px-4 ">
@@ -99,7 +96,7 @@ const HomePage: React.FC = () => {
       </div>
 
       <div className="container mx-auto mt-20">
-      <ExploreCategories wich="Explore" data={data} isLoading={isLoading} title="Explore our wide variety of categories" desc="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new" />
+      <ExploreCategories wich="Explore" data={data} isLoading={isLoading} title="Explore our wide variety of categories" desc="Whether you re looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new" />
 
         <div className="mt-36  max-md:mt-12">
           <h1 className="text-3xl font-bold max-lg:text-2xl	max-md:text-xl">We Provide you streaming experience across various devices.</h1>
@@ -127,7 +124,7 @@ const HomePage: React.FC = () => {
   <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-5">
     <div className="lg:w-2/3 max-md:w-full">
       <h1 className="text-4xl max-lg:text-2xl max-md:text-xl font-semibold">
-        Choose the plan that's right for you
+        Choose the plan that s right for you
       </h1>
       <p className="text-gray-9 mt-4 max-lg:text-base">
         Join StreamVibe and select from our flexible subscription options

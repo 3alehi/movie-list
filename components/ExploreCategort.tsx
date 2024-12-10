@@ -4,14 +4,14 @@ import React, { useRef, useState } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import GenresBox from "@/components/GenresBox";
-import type { Swiper as SwiperType } from 'swiper';
+import type { Swiper as SwiperType } from "swiper";
 
 interface ExploreCategoriesProps {
   data: Array<{ name: string; id: number }>;
   isLoading: boolean;
-  title:string ;
-  desc :string;
-  wich : string;
+  title: string;
+  desc: string;
+  wich: string;
 }
 
 const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
@@ -19,11 +19,10 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
   isLoading,
   title,
   desc,
-  wich
+  wich,
 }) => {
   const [progressPercent, setProgressPercent] = useState<number>(0);
-  const swiperRef = useRef<any>(null);
-  
+  const swiperRef = useRef<SwiperType | null>(null); // مشخص کردن نوع Swiper
 
   const handleSlideChange = (swiper: SwiperType) => {
     const progress = Math.round(swiper.progress * 100);
@@ -34,26 +33,17 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
     <div>
       <div className="flex justify-between items-center mb-8 max-md:flex-col">
         <div>
-          <h2 className="text-3xl font-bold max-lg:text-2xl">
-            {title}
-          </h2>
-          <p className="text-gray-400 mt-2">
-           {desc}
-          </p>
+          <h2 className="text-3xl font-bold max-lg:text-2xl">{title}</h2>
+          <p className="text-gray-400 mt-2">{desc}</p>
         </div>
 
-        <div
-          className="bg-black-velvet p-4 rounded-lg w-full max-w-lg mt-20 max-md:mt-5"
-          ref={swiperRef}
-        >
+        <div className="bg-black-velvet p-4 rounded-lg w-full max-w-lg mt-20 max-md:mt-5">
           {isLoading ? (
             <div className="animate-pulse flex items-center space-x-4">
               <div className="w-12 h-12 bg-gray-700 rounded-lg"></div>
-
               <div className="relative flex-grow h-4 bg-gray-700 rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 h-full bg-gray-600 rounded-lg"></div>
               </div>
-
               <div className="w-12 h-12 bg-gray-700 rounded-lg"></div>
             </div>
           ) : (
@@ -114,7 +104,7 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
       <div className="relative">
         <Swiper
           modules={[Autoplay]}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onSwiper={(swiper) => (swiperRef.current = swiper)} // نگهداری نمونه Swiper
           onSlideChange={handleSlideChange}
           autoplay={{
             delay: 5000,
@@ -139,7 +129,7 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
         >
           {data?.map((item, index) => (
             <SwiperSlide key={index}>
-              <GenresBox  name={item.name} id={item.id} wich={wich} />
+              <GenresBox name={item.name} id={item.id} wich={wich} />
             </SwiperSlide>
           ))}
         </Swiper>
