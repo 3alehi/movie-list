@@ -54,7 +54,7 @@ const GenresBox: React.FC<GenresBoxProps> = ({ name, id, wich }) => {
       [0, 3, 4, 5].map((index) => (
         <img
           key={index}
-          className="w-[90px] h-[90px] rounded-md shadow-lg cursor-pointer"
+          className="w-[90px] max-md:w-full h-[90px] rounded-md shadow-lg cursor-pointer"
           src={data.data[index]?.poster || "/placeholder.png"}
           alt={`Poster ${index}`}
           onClick={() => handleNavigate(data.data[index]?.id)}
@@ -78,10 +78,10 @@ const GenresBox: React.FC<GenresBoxProps> = ({ name, id, wich }) => {
 
       <div className="flex justify-between items-center mt-2">
         {(wich === "Explore" || wich === "Top") && (
-          <div className="flex justify-between w-full">
+          <div className="flex justify-between items-center w-full">
             <div className="flex flex-col">
               {wich === "Top" && (
-                <p className="p-2 bg-red-btn rounded-lg">Top 10 In</p>
+                <p className="p-2 max-md:p-1 bg-red-btn rounded-lg">Top 10 In</p>
               )}
               <span>{name}</span>
             </div>

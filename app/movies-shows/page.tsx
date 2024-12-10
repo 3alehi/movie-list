@@ -17,8 +17,8 @@ const Page: React.FC = () => {
                 style={{ backgroundImage: "url('/Container.png')" }}
             >
                 <div className="text-white flex flex-col items-center text-center mb-6">
-                    <h1 className='text-4xl	 font-bold'>Avengers : Endgame</h1>
-                    <p className='text-gray-9 w-[70%] mt-3'>With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos s actions and undo the chaos to the universe, no matter what consequences may be in store, and no matter who they face... Avenge the fallen.</p>
+                    <h1 className='text-4xl	 font-bold max-lg:text-2xl max-md:text-xl'>Avengers : Endgame</h1>
+                    <p className='text-gray-9 w-[70%] mt-3 max-md:w-[80%]'>With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos s actions and undo the chaos to the universe, no matter what consequences may be in store, and no matter who they face... Avenge the fallen.</p>
                 </div>
                 <div className="text-white flex justify-around text-center mb-6">
                     <div className='flex  '>
@@ -50,7 +50,6 @@ const Page: React.FC = () => {
                 </div>
 
                 <div className="flex justify-between items-center w-full px-8 mb-4">
-                    {/* دکمه چپ */}
                     <i className="p-5 bg-black-velvet rounded-lg cursor-pointer">
                         <svg
                             width="20"
@@ -69,7 +68,6 @@ const Page: React.FC = () => {
                         </svg>
                     </i>
 
-                    {/* دکمه راست */}
                     <i className="p-5 bg-black-velvet rounded-lg cursor-pointer">
                         <svg
                             width="24"
@@ -89,7 +87,7 @@ const Page: React.FC = () => {
                     </i>
                 </div>
             </div>
-            <div className='mt-52 border border-hr px-4 py-4 rounded-lg '>
+            <div className='mt-52 max-md:mt-10 border border-hr px-4 py-4 rounded-lg '>
        
 
             <ExploreCategories wich='Explore' data={data} isLoading={isLoading} desc='' title='Our Genres' />

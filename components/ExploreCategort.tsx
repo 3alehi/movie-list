@@ -30,7 +30,7 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
   };
 
   return (
-    <div>
+    <div className="my-4">
       <div className="flex justify-between items-center mb-8 max-md:flex-col">
         <div>
           <h2 className="text-3xl font-bold max-lg:text-2xl">{title}</h2>

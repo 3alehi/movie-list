@@ -1,8 +1,7 @@
 'use client';
-import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation'; // برای گرفتن مسیر فعلی
-
+import Link from 'next/link';
 interface MenuItem {
   id: number;
   title: string;
@@ -31,8 +30,8 @@ const Navbar: React.FC = () => {
   return (
     <div className="w-full flex justify-between container mx-auto my-5">
       {/* Logo */}
-      <div className="flex items-center cursor-pointer">
-        <i className="mx-1">
+      <Link href={"/"}  className="flex items-center cursor-pointer" >
+        <i   className="mx-1">
           <svg
             width="50"
             height="50"
@@ -46,7 +45,7 @@ const Navbar: React.FC = () => {
             />
           </svg>
         </i>
-      </div>
+      </Link>
 
       {/* Menu Links */}
       <ul className="bg-black flex items-center rounded-xl py-5 px-8 max-md:hidden">
