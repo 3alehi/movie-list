@@ -3,18 +3,16 @@ import { fetchMoviesByGenre } from "@/lib/api/getPoster";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import Router from "next/router";
 import React from "react";
 
 interface GenresBoxProps {
   name: string;
-  isLoding: boolean;
   id: number;
   wich: string;
 }
 
-const GenresBox: React.FC<GenresBoxProps> = ({ name, isLoding, id, wich }) => {
-  const router = useRouter(); // Initialize useRouter
+const GenresBox: React.FC<GenresBoxProps> = ({ name, id, wich }) => {
+  const router = useRouter();
 
   const { data, isLoading } = useQuery({
     queryKey: ["genres", id],
@@ -23,7 +21,7 @@ const GenresBox: React.FC<GenresBoxProps> = ({ name, isLoding, id, wich }) => {
   });
 
   const handleNavigate = (movieId: number) => {
-    router.push(`/movies-shows/${movieId}`); // Correctly use router.push
+    router.push(`/movies-shows/${movieId}`);
   };
 
   const renderSkeleton = () => {

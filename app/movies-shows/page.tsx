@@ -1,26 +1,15 @@
 "use client"
 import ExploreCategories from '@/components/ExploreCategort';
-import GenresBox from '@/components/GenresBox';
 import { fetchGenres } from '@/lib/api/genres';
 import { useQuery } from '@tanstack/react-query';
-import React, { useRef, useState } from 'react';
 import "swiper/css";
 
-import { Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 const page: React.FC = () => {
-    const [progressPercent, setProgressPercent] = useState(0);
-    const swiperRef = useRef<any>(null);
     const { data, isLoading } = useQuery({
         queryKey: ["genres"],
         queryFn: fetchGenres,
       });
-      const handleSlideChange = (swiper: any) => {
-        const progress = Math.round(swiper.progress * 100);
-        setProgressPercent(progress);
-      };
-    const containerRef = useRef<HTMLDivElement | null>(null);
     return (
         <div className="container mx-auto">
             <div
@@ -29,7 +18,7 @@ const page: React.FC = () => {
             >
                 <div className="text-white flex flex-col items-center text-center mb-6">
                     <h1 className='text-4xl	 font-bold'>Avengers : Endgame</h1>
-                    <p className='text-gray-9 w-[70%] mt-3'>With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos's actions and undo the chaos to the universe, no matter what consequences may be in store, and no matter who they face... Avenge the fallen.</p>
+                    <p className='text-gray-9 w-[70%] mt-3'>With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos s actions and undo the chaos to the universe, no matter what consequences may be in store, and no matter who they face... Avenge the fallen.</p>
                 </div>
                 <div className="text-white flex justify-around text-center mb-6">
                     <div className='flex  '>

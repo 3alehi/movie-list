@@ -3,6 +3,7 @@
 import StarRating from "@/components/StartRating";
 import { fetchMoviesById } from "@/lib/api/getonemovies";
 import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -150,7 +151,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
                         {data?.images && data.images.length > 0 ? (
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                                 {data.images.map((item: string, index: number) => (
-                                    <img
+                                    <Image
                                         key={index}
                                         className="w-full h-auto rounded-lg"
                                         src={item}

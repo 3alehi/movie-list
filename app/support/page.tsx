@@ -11,7 +11,7 @@ const page: React.FC = () => {
             Welcome to our support page!
           </h1>
           <p className="text-gray-9 mt-3 text-base max-lg:text-sm">
-            We're here to help you with any problems you may be having with our
+            We re here to help you with any problems you may be having with our
             product.
           </p>
           <div className="border-8 rounded-lg mt-10 border-hr">

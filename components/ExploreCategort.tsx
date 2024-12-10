@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import GenresBox from "@/components/GenresBox";
+import type { Swiper as SwiperType } from 'swiper';
 
 interface ExploreCategoriesProps {
   data: Array<{ name: string; id: number }>;
@@ -20,18 +21,17 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
   desc,
   wich
 }) => {
-  const [progressPercent, setProgressPercent] = useState(0);
+  const [progressPercent, setProgressPercent] = useState<number>(0);
   const swiperRef = useRef<any>(null);
   
 
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: SwiperType) => {
     const progress = Math.round(swiper.progress * 100);
     setProgressPercent(progress);
   };
 
   return (
     <div>
-      {/* Header Section */}
       <div className="flex justify-between items-center mb-8 max-md:flex-col">
         <div>
           <h2 className="text-3xl font-bold max-lg:text-2xl">
@@ -42,27 +42,22 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
           </p>
         </div>
 
-        {/* Progress and Navigation */}
         <div
           className="bg-black-velvet p-4 rounded-lg w-full max-w-lg mt-20 max-md:mt-5"
           ref={swiperRef}
         >
           {isLoading ? (
             <div className="animate-pulse flex items-center space-x-4">
-              {/* Skeleton Loading for Previous Button */}
               <div className="w-12 h-12 bg-gray-700 rounded-lg"></div>
 
-              {/* Skeleton Loading for Progress Bar */}
               <div className="relative flex-grow h-4 bg-gray-700 rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 h-full bg-gray-600 rounded-lg"></div>
               </div>
 
-              {/* Skeleton Loading for Next Button */}
               <div className="w-12 h-12 bg-gray-700 rounded-lg"></div>
             </div>
           ) : (
             <div className="flex items-center space-x-4">
-              {/* Previous Button */}
               <button
                 onClick={() => swiperRef.current?.slidePrev()}
                 className="px-4 py-4 flex items-center justify-center bg-bg-black text-white rounded-lg"
@@ -84,7 +79,6 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
                 </svg>
               </button>
 
-              {/* Progress Bar */}
               <div className="relative flex-grow h-4 bg-bg-navbar rounded-lg overflow-hidden">
                 <div
                   className="absolute top-0 left-0 h-full bg-red-btn rounded-lg transition-all"
@@ -92,7 +86,6 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
                 ></div>
               </div>
 
-              {/* Next Button */}
               <button
                 onClick={() => swiperRef.current?.slideNext()}
                 className="px-4 py-4 flex items-center justify-center bg-bg-black text-white rounded-lg"
@@ -118,7 +111,6 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
         </div>
       </div>
 
-      {/* Swiper Section */}
       <div className="relative">
         <Swiper
           modules={[Autoplay]}
@@ -147,7 +139,7 @@ const ExploreCategories: React.FC<ExploreCategoriesProps> = ({
         >
           {data?.map((item, index) => (
             <SwiperSlide key={index}>
-              <GenresBox isLoding={false} name={item.name} id={item.id} wich={wich} />
+              <GenresBox  name={item.name} id={item.id} wich={wich} />
             </SwiperSlide>
           ))}
         </Swiper>

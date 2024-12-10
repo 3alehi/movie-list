@@ -3,11 +3,9 @@ import React, { useState } from 'react';
 import faqe from '@/public/data/faqs.json';
 
 const Questions: React.FC = () => {
-  // مدیریت باز بودن یک سؤال
   const [openId, setOpenId] = useState<number | null>(null);
 
   const handleToggle = (id: number) => {
-    // اگر همان id دوباره کلیک شد، ببند
     if (openId === id) {
       setOpenId(null);
     } else {
@@ -23,7 +21,7 @@ const Questions: React.FC = () => {
         Frequently Asked Questions
       </h1>
       <p className="text-gray-9 mt-4 max-lg:text-base">
-        Got questions? We've got answers! Check out our FAQ section to find
+        Got questions? We ve got answers! Check out our FAQ section to find
         answers to the most common questions about StreamVibe.
       </p>
     </div>
@@ -41,9 +39,9 @@ const Questions: React.FC = () => {
               <p className="bg-bg-black px-5 py-5 rounded-lg mx-5">{data.id}</p>
               <h1>{data.question}</h1>
             </div>
-            {openId === data.id ? (
+            {openId === Number(data.id) ? (
               <svg
-                onClick={() => handleToggle(data.id)}
+                onClick={() => handleToggle(Number(data.id))}
                 className="cursor-pointer"
                 width="20"
                 height="4"
@@ -58,7 +56,7 @@ const Questions: React.FC = () => {
               </svg>
             ) : (
               <svg
-                onClick={() => handleToggle(data.id)}
+                onClick={() => handleToggle(Number(data.id))}
                 className="cursor-pointer"
                 width="20"
                 height="21"
@@ -73,7 +71,7 @@ const Questions: React.FC = () => {
               </svg>
             )}
           </div>
-          {openId === data.id && (
+          {openId === Number(data.id) && (
             <div className="mt-2 mx-5 text-gray-9 px-20 max-md:px-0">
               <p>{data.answer}</p>
             </div>

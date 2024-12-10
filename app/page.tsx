@@ -4,14 +4,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchGenres } from "@/lib/api/genres";
 
-import GenresBox from "@/components/GenresBox";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Experience from "@/components/Experience";
 import Questions from "@/components/Questions";
 import PlanBox from "@/components/PlanBox";
-import { Autoplay } from 'swiper/modules';
-import StartFree from "@/components/StartFree";
 import ExploreCategories from "@/components/ExploreCategort";
 
 const HomePage: React.FC = () => {
@@ -22,15 +18,11 @@ const HomePage: React.FC = () => {
     queryFn: fetchGenres,
   });
 
-  const [progressPercent, setProgressPercent] = useState(0);
-  const swiperRef = useRef<any>(null);
-
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // استفاده از Intersection Observer برای Lazy Loading
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
+      () => {
 
       },
       { threshold: 0.1 } 
