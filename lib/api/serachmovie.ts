@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_BASE_URL = "https://moviesapi.ir/api/v1";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL
 
 export const fetchMovies = async (page: number, query: string) => {
     const { data } = await axios.get(

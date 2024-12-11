@@ -85,7 +85,22 @@ const HomePage: React.FC = () => {
             StreamVibe is the best streaming experience for watching your
             favorite movies and shows on demand, anytime, anywhere.
           </p>
-          <button className="mt-8 px-6 py-3 bg-red-btn text-white rounded-lg flex items-center">
+          <button className="mt-8 px-6 py-3 bg-red-btn text-white rounded-lg flex items-center" onClick={()=>{
+            fetch('https://moviesapi.ir/api/v1/register', { // جایگزین کنید با آدرس واقعی
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                email: 'default@example.com',
+                password: 'password123',
+                name: 'Default User'
+              })
+            })
+              .then(response => response.json())
+              .then(data => console.log(data)
+              )
+              .catch(error =>alert("false"));
+            
+          }}>
           <svg className="mr-2" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fillRule="evenodd" clipRule="evenodd" d="M0 2.6527C0 1.22656 1.529 0.322511 2.7786 1.00979L14.3192 7.35711C15.6144 8.06947 15.6144 9.93056 14.3192 10.6429L2.7786 16.9902C1.529 17.6775 0 16.7735 0 15.3473V2.6527Z" fill="white"/>
 </svg>
