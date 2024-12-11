@@ -5,7 +5,6 @@ const page: React.FC = () => {
   return (
     <div className="container mx-auto mt-24 px-4">
       <div className="grid grid-cols-1 lg:grid-cols-[auto_60%] gap-10">
-        {/* بخش متن و تصاویر */}
         <div>
           <h1 className="text-4xl max-lg:text-3xl max-md:text-2xl">
             Welcome to our support page!
@@ -15,7 +14,6 @@ const page: React.FC = () => {
             product.
           </p>
           <div className="border-8 rounded-lg mt-10 border-hr">
-            {/* تصاویر */}
             <img
               className="w-full"
               src="/New folder (2)/Image Container.png"
@@ -39,7 +37,6 @@ const page: React.FC = () => {
           </div>
         </div>
 
-        {/* فرم تماس */}
         <div className="border-4 border-hr rounded-lg bg-black-velvet p-6 max-lg:p-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>

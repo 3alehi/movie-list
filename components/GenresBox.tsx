@@ -33,7 +33,7 @@ const GenresBox: React.FC<GenresBoxProps> = ({ name, id, wich }) => {
     return Array.from({ length: 4 }).map((_, index) => (
       <div
         key={index}
-        className="w-[90px] h-[90px] bg-gray-700 rounded-md animate-pulse"
+        className="w-[90px] max-md:w-full h-[90px] bg-gray-700 rounded-md animate-pulse"
       ></div>
     ));
   };
@@ -42,7 +42,7 @@ const GenresBox: React.FC<GenresBoxProps> = ({ name, id, wich }) => {
     if (wich === "Terend" || wich === "New" || wich === "Must") {
       return (
         <img
-          className="w-full rounded-md shadow-lg cursor-pointer"
+          className="w-full rounded-md shadow-lg cursor-pointer object-fill"
           src={data?.data[0]?.poster || "/placeholder.png"}
           alt="Poster 0"
           onClick={() => handleNavigate(data?.data[0]?.id)}
@@ -54,7 +54,7 @@ const GenresBox: React.FC<GenresBoxProps> = ({ name, id, wich }) => {
       [0, 3, 4, 5].map((index) => (
         <img
           key={index}
-          className="w-[90px] max-md:w-full h-[90px] rounded-md shadow-lg cursor-pointer"
+          className="w-[90px] max-md:w-full h-[90px] rounded-md shadow-lg cursor-pointer object-fill"
           src={data.data[index]?.poster || "/placeholder.png"}
           alt={`Poster ${index}`}
           onClick={() => handleNavigate(data.data[index]?.id)}

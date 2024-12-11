@@ -13,15 +13,12 @@ const PlanBox: React.FC<PlanBoxProps> = ({ id }) => {
           key={data.id}
           className="bg-black-velvet px-12 py-12 max-lg:px-8 max-md:px-6 max-lg:pt-9 rounded-lg w-full"
         >
-          {/* عنوان پلن */}
           <h1 className="text-2xl font-bold max-lg:text-xl max-md:text-lg">
             {data.name}
           </h1>
-          {/* توضیحات پلن */}
           <p className="text-gray-9 mt-4 max-lg:text-sm">
             {data.description}
           </p>
-          {/* قیمت پلن */}
           <p className="mt-12 flex items-baseline">
             <span className="text-white text-3xl max-lg:text-2xl max-md:text-xl">
               ${id === 1 ? data.monthly_price : data.yearly_price}

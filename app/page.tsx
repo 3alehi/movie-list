@@ -1,4 +1,4 @@
-"use client"; // Add this directive at the top
+"use client"; 
 
 import React, { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -106,12 +106,12 @@ const HomePage: React.FC = () => {
         </div>
         <div className="grid grid-cols-3 gap-8 max-lg:grid-cols-2 max-md:grid-cols-1  mt-20">
 
-          <Experience />
-          <Experience />
-          <Experience />
-          <Experience />
-          <Experience />
-          <Experience />
+          <Experience wich={1} />
+          <Experience  wich={2}/>
+          <Experience wich={3} />
+          <Experience wich={4} />
+          <Experience wich={5} />
+          <Experience wich={6}/>
 
 
         </div>

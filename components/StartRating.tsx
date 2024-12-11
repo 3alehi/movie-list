@@ -1,17 +1,17 @@
 import React from "react";
 
 interface StarRatingProps {
-  imdbRating: number; // امتیاز IMDb بین 0 تا 10
+  imdbRating: number;
 }
 
 const StarRating: React.FC<StarRatingProps> = ({ imdbRating }) => {
   const MAX_RATING = 10;
-  const normalizedRating = (imdbRating / MAX_RATING) * 5; // تبدیل امتیاز به بازه‌ی 0 تا 5
+  const normalizedRating = (imdbRating / MAX_RATING) * 5; 
 
   return (
     <div className="flex space-x-1">
       {Array.from({ length: 5 }, (_, index) => {
-        const fillPercentage = Math.max(0, Math.min(1, normalizedRating - index)); // محاسبه درصد پر شدن
+        const fillPercentage = Math.max(0, Math.min(1, normalizedRating - index));
         return (
           <svg
             key={index}

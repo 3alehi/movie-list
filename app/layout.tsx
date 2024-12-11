@@ -12,16 +12,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // ایجاد یک QueryClient
   const [queryClient] = useState(() => new QueryClient());
 
   return (
     <html lang="en">
       <body className="bg-black text-white font-Manrope">
-        {/* تنظیم QueryClientProvider */}
         <QueryClientProvider  client={queryClient}>
           <Navbar />
-          {children}
+                    {children}
 <div className='container mx-auto'>
           <StartFree/>
 

@@ -8,7 +8,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 interface PageProps {
-    params: Promise<{ id: number }>; // params is a Promise in the new Next.js version
+    params: Promise<{ id: number }>; 
 }
 
 const Page: React.FC<PageProps> = ({ params }) => {
@@ -31,13 +31,11 @@ const Page: React.FC<PageProps> = ({ params }) => {
     if (isLoading) {
         return (
             <div className="container mx-auto px-4">
-                {/* Skeleton Banner */}
                 <div className="h-[400px] md:h-[700px] w-full bg-gray-800 rounded-lg mb-10">
                     <Skeleton height="100%" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8">
-                    {/* Skeleton Left Section */}
                     <div>
                         <div className="bg-gray-900 p-6 rounded-lg mb-6">
                             <Skeleton height={20} width={150} />
@@ -60,7 +58,6 @@ const Page: React.FC<PageProps> = ({ params }) => {
                         </div>
                     </div>
 
-                    {/* Skeleton Right Section */}
                     <div className="bg-gray-900 p-6 rounded-lg">
                         <div className="mb-6">
                             <Skeleton height={20} width={200} />
@@ -95,7 +92,6 @@ const Page: React.FC<PageProps> = ({ params }) => {
 
     return (
         <div className="container mx-auto px-4">
-            {/* Movie Banner */}
             <div
                 className="h-[400px] md:h-[700px] w-full bg-cover bg-center rounded-lg flex flex-col justify-end items-center relative"
                 style={{ backgroundImage: `url(${data?.poster || "/placeholder.jpg"})` }}
