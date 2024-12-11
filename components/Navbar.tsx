@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
         </i>
       </Link>
 
-      <ul className="hidden md:flex items-center rounded-xl py-2 px-6 bg-gray-900">
+      <ul className="hidden md:flex items-center rounded-xl py-2 px-6">
         {menuItems.map((item) => (
           <li
             key={item.id}
