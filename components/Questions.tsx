@@ -22,7 +22,7 @@ const Questions: React.FC = () => {
             Frequently Asked Questions
           </h1>
           <p className="text-gray-9 mt-4 max-lg:text-base">
-            Got questions? We've got answers! Check out our FAQ section to find
+            Got questions? We ve got answers! Check out our FAQ section to find
             answers to the most common questions about StreamVibe.
           </p>
         </div>

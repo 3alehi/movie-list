@@ -6,6 +6,7 @@ interface SearchProps {
     setIsOpen: (value: boolean) => void;
 }
 
+type Movie = { id: number; poster: string; title: string; year: string; country: string; imdb_rating: string; genres: string[];}
 const Search: React.FC<SearchProps> = ({ setIsOpen }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [query, setQuery] = useState("");
@@ -129,7 +130,7 @@ const Search: React.FC<SearchProps> = ({ setIsOpen }) => {
                         </div>
                     ) : (
                         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {movies.map((movie: any) => (
+                            {movies.map((movie: Movie) => (
                                 <li
                                     key={movie.id}
                                     className="bg-black-velvet p-4 rounded-lg cursor-pointer"
