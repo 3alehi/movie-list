@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Search from './Search';
+import LoginSignup from './LoginSignup';
+import { useAuth } from '@/context/AuthContext';
 
 interface MenuItem {
   id: number;
@@ -11,11 +13,13 @@ interface MenuItem {
 }
 
 const Navbar: React.FC = () => {
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+
   const pathname = usePathname();
   const [activeItems, setActiveItems] = useState<number | null>(1);
   const [isopen, setIsOpen] = useState<boolean>(false);
   const [isMenuOpen, setMenuIsOpen] = useState<boolean>(false);
-
+  const [login, setLogin] = useState<boolean>(false)
   const menuItems: MenuItem[] = [
     { id: 1, title: 'Home', href: '/' },
     { id: 2, title: 'Movies & Shows', href: '/movies-shows' },
@@ -87,10 +91,24 @@ const Navbar: React.FC = () => {
             />
           </svg>
         </i>
-        <i className='cursor-pointer'><svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M17 19C17 16.2386 13.4183 14 9 14C4.58172 14 1 16.2386 1 19M9 11C6.23858 11 4 8.76142 4 6C4 3.23858 6.23858 1 9 1C11.7614 1 14 3.23858 14 6C14 8.76142 11.7614 11 9 11Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</i>
+        {isLoggedIn ? (
+          <i className='cursor-pointer'>
+            <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 16C13 13.7909 10.3137 12 7 12C3.68629 12 1 13.7909 1 16M19 7L15 11L13 9M7 9C4.79086 9 3 7.20914 3 5C3 2.79086 4.79086 1 7 1C9.20914 1 11 2.79086 11 5C11 7.20914 9.20914 9 7 9Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </i>
+
+        ) : (
+          <i className='cursor-pointer'  onClick={() => { setLogin(true) }}>
+            <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.23047 7H4.2002C3.08009 7 2.51962 7 2.0918 7.21799C1.71547 7.40973 1.40973 7.71547 1.21799 8.0918C1 8.51962 1 9.08009 1 10.2002V15.8002C1 16.9203 1 17.4801 1.21799 17.9079C1.40973 18.2842 1.71547 18.5905 2.0918 18.7822C2.5192 19 3.07902 19 4.19694 19H13.8031C14.921 19 15.48 19 15.9074 18.7822C16.2837 18.5905 16.5905 18.2842 16.7822 17.9079C17 17.4805 17 16.9215 17 15.8036V10.1969C17 9.07899 17 8.5192 16.7822 8.0918C16.5905 7.71547 16.2837 7.40973 15.9074 7.21799C15.4796 7 14.9203 7 13.8002 7H11.7689M6.23047 7H11.7689M6.23047 7C6.10302 7 6 6.89668 6 6.76923V4C6 2.34315 7.34315 1 9 1C10.6569 1 12 2.34315 12 4V6.76923C12 6.89668 11.8964 7 11.7689 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </i>
+        )}
+
+
+
+
 
         <div
           className="cursor-pointer flex flex-col space-y-1 lg:hidden"
@@ -131,6 +149,8 @@ const Navbar: React.FC = () => {
       </div>
 
       {isopen && <Search setIsOpen={setIsOpen} />}
+      {login && <LoginSignup setIsOpen={setLogin} />}
+
     </div>
   );
 };

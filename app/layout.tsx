@@ -6,6 +6,8 @@ import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import Footer from '@/components/Footer';
 import StartFree from '@/components/StartFree';
+import { Toaster } from 'react-hot-toast';
+import { AuthProvider } from '@/context/AuthContext';
 
 export default function RootLayout({
   children,
@@ -17,15 +19,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white font-Manrope">
-        <QueryClientProvider  client={queryClient}>
-          <Navbar />
-                    {children}
-<div className='container mx-auto'>
-          <StartFree/>
+        <QueryClientProvider client={queryClient}>
+        <AuthProvider>
 
-</div>
-<Footer/>
+          <Navbar />
+          {children}
+          <div className='container mx-auto'>
+            <StartFree />
+
+          </div>
+          <Footer />
+          </AuthProvider>
+
         </QueryClientProvider>
+        <Toaster position='bottom-right' />
+
       </body>
     </html>
   );
